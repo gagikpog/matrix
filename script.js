@@ -8,7 +8,7 @@ const headColor = '#fff';
 const chars = '!"#$%&\'()*+,-./0123456789:;<=>ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨ª«¬­®¯°±²³µ¶·¸¹º»¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ';
 
 const charHeight = 20;
-const speed = 60;
+
 ctx.font = `${charHeight}px Matrix`;
 setInterval(() => {
     const x = (Math.random() * 10000) % canvas.width;
@@ -28,6 +28,7 @@ class Char {
     constructor(x, y) {
         this.x = x;
         this.y = y;
+        const speed = 30 + (Math.random() * 100) % 70;
         this.id = setInterval(this.draw.bind(this), speed);
         this.char = this.getRandomChar();
     }

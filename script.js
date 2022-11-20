@@ -22,6 +22,7 @@ setInterval(fading, 200);
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    ctx.font = `${charHeight}px Matrix`;
 });
 
 class Char {
